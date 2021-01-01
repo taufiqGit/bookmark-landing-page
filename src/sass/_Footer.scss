@@ -1,0 +1,72 @@
+@import 'colors';
+@import 'Mixin';
+@import 'MediaQuery';
+
+footer {
+    background-color: $Very-Dark-Blue;
+    position: relative;
+    padding: 4rem 0 5rem;
+    .main-footer {
+        @include flex-box(space-between);
+        @include view-for(small-to-medium){
+            @include flex-box(space-between, center, column);
+            height: 300px;
+        }
+        nav {
+            @include flex-box();
+            @include view-for(small-to-medium){
+                @include flex-box(center, center, column);
+            }
+            .img-logo {
+                @include view-for(small-to-medium){
+                    margin-right: 0;
+                }
+                margin-right: 40px;
+                width: 180px;
+            }
+            ul {
+                @include list-style($White, $Soft-Red);
+                @include view-for(small-to-medium){
+                   margin-top: 30px;
+                   text-align: center;
+                   li{ 
+                        display: block;
+                        margin: 30px 0;                        
+                    }  
+                }
+            }
+        }     
+        .social-media-icon {
+            span {
+                display: inline-block;
+                width: 25px;
+                margin: 0 15px;
+                svg{
+                    cursor: pointer;
+                    path{
+                        &:hover{
+                            fill: $Soft-Red;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .attribution {
+        position: absolute;
+        font-size: 14px;
+        bottom: 5px;
+        color: $White;
+        display: inline-block;
+        text-align: center;
+        left: 50%;
+        transform: translateX(-50%);
+        a {
+            color: $White;
+            text-decoration: none;
+            &:hover {
+                color: $Soft-Red;
+            }
+        }
+    }
+}

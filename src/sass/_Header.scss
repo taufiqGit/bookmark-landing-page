@@ -1,0 +1,123 @@
+@import 'Mixin';
+@import 'colors';
+@import 'MediaQuery';
+
+header {
+    height: 110px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .img-logo {
+        @include view-for(small-to-medium){
+           position: relative;
+           z-index: 99;
+           width: 170px;
+        }
+        .logo-white {
+            fill: $White;
+        }
+    }
+    nav {
+        display: flex;  
+        align-items: center;
+        transition: all 1s linear;
+        @include view-for(small-to-medium) {
+            display: none;
+        }
+        ul{
+            @include list-style($Very-Dark-Blue, $Soft-Red);  
+        }
+        .btn-login {
+            @include mix-button($Soft-Red, $White, $Soft-Red, $White, $Soft-Red);
+            @include view-for(small-to-medium){
+                @include mix-button(transparent, #fff, #fff, #fff, $Very-Dark-Blue, #fff);
+                font-size: 2rem;
+                margin: 10px 0;
+                height: 55px;
+                width: 85%;
+                letter-spacing: 1px;
+            };
+            margin-left: 1rem;
+        }
+    } 
+    .show-menu { 
+        @keyframes animasi-nav{
+            from {
+                max-height: 0%;
+            }
+            to {
+                max-height: 100%;
+            }
+        }
+        @include flex-box(center, center, column);
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        position: fixed;
+        animation: animasi-nav 1s linear;
+        max-height: 100%;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 66;
+        background-color: rgba($color: $Very-Dark-Blue, $alpha: .9);
+        ul {
+            display: flex;
+            flex-direction: column;
+            li {
+                margin: 16px 0;
+                font-size: 2rem;
+                text-align: center;
+                a{
+                    color: #fff;
+                    letter-spacing: 2px;
+                }
+            }
+        }
+    }          
+    .active {  
+        display: flex;
+        position: relative;
+        right: -25px;
+        z-index: 88;
+        @include btn-menu-animation(45deg, 17px, 50px, -45deg, -17px, 0);  
+        span {
+            background-color: #fff;
+        }
+    }
+    .no-active {
+        @include btn-menu-animation();
+        span {
+            background-color: $Very-Dark-Blue;
+        }
+    }
+    .hamburger-menu {
+        background: none;
+        border-radius: 2px;
+        height: 60px;
+        width: 100px;
+        display: flex;
+        transition: all 6s linear;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: center;
+        @include view-for(small-to-medium){
+            display: flex;
+            position: relative;
+            top: -3.5px; 
+            z-index: 99;
+        }
+        @include view-for(medium-to-extra-large){
+            display: none;
+        }
+        span {
+            margin: 4px 0;
+            width: 2.5rem;
+            height: 4px;
+            display: inline-block;
+            position: relative;
+            border-radius: 5px;
+        }
+    }   
+}

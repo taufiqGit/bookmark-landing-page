@@ -1,0 +1,56 @@
+@import 'colors';
+@import 'MediaQuery';
+@import 'Mixin';
+
+
+.title-download {
+    margin: 10rem auto 0;
+    @include title-section()
+}
+
+.download-browser {
+    $sizes-mr: 0px 50px 100px;
+    margin: 2rem auto 0;
+    @include flex-box();
+    @include view-for(small-to-medium-plus){
+        @include flex-box(center, center, column)
+    }
+    @each $var in $sizes-mr {
+        $i: index($sizes-mr, $var);
+        .cards-#{$i} {
+            @include view-for(medium-plus-to-extra-large){
+                margin: $var 18px 0;
+            }
+            margin: 3rem 18px 0;
+        }
+    }
+    .card {
+        width: 240px;
+        height: 310px;
+        padding: 20px 0;
+        border-radius: 5px;
+        box-shadow: 0px 5px 5px 0px $Grayish-Blue;
+        background-image: url('../images/bg-dots.svg');
+        background-repeat: no-repeat;
+        background-position-y: 75%;
+        @include flex-box(space-between, center, column);
+        .logo-browser{
+            margin-top: 10px;
+        }
+        h3 {
+            color: $Very-Dark-Blue;
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+        p {
+            color: $Grayish-Blue;
+            margin-bottom: 35px;
+            font-size: 14px;
+        }
+        button {
+            font-size: 14px;
+            width: 210px;
+            @include mix-button($Soft-Blue, #fff, $Soft-Blue, #fff, $Soft-Blue)
+        }
+    }
+}

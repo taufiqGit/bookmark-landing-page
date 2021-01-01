@@ -1,0 +1,77 @@
+@import 'MediaQuery';
+
+@mixin flex-box($Justify: center, $Items: center, $Direction: row) {
+    display: flex;
+    justify-content: $Justify;
+    align-items: $Items;
+    flex-direction: $Direction;
+}
+
+@mixin list-style($color, $hovCol) {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    li {
+        display: inline-block;
+        margin: 0 1rem;
+        a {
+            text-decoration: none;
+            color: $color;
+            letter-spacing: 1px;
+            &:hover {
+                color: $hovCol;
+            }
+        }
+    }
+}
+
+@mixin mix-button($bg, $col, $hovBor, $hovBg, $hovCol, $bor: transparent) {
+    background-color: $bg;
+    color: $col;
+    border: 2px solid $bor;
+    transition: .4s ease-out;
+    @include view-for(small-to-medium){
+        letter-spacing: 0;
+    }
+    &:hover {
+        border: 2px solid $hovBor;
+        background-color: $hovBg;
+        color: $hovCol;
+    }
+    &:active {
+        box-shadow: 0px 0px 10px 12px $Grayish-Blue;
+    }
+}
+
+@mixin btn-menu-animation($rotate-1 : 0deg, $transY-1 : 0px, $over-right: 1, $rotate-3 : 0deg, $transY-3 : 0px, $visi: 1){
+    @for $i from 1 to 4 {
+        span:nth-child(#{$i}) {
+            @if $i == 1{
+                transform: rotate($rotate-1) translateY($transY-1);
+                transition: all .6s linear;
+            } @else if $i == 2{
+                transition: all .7s linear;
+                margin-right: $over-right;
+                opacity: $visi;
+            } @else {
+                transform: rotate($rotate-3) translateY($transY-3);
+                transition: all .6s linear;
+            }
+        }                     
+    }
+}
+
+@mixin title-section {
+    text-align: center;  
+    //margin: 7rem auto 0;
+    max-width: 550px;
+    h2 {
+        margin-top: 15px;
+        color: $Very-Dark-Blue;
+    }
+    p {
+        margin-top: 16px;
+        color: $Grayish-Blue;
+        font-size: 1.1rem;
+    }
+}

@@ -1,0 +1,97 @@
+@import 'colors';
+@import 'Mixin';
+@import 'MediaQuery';
+
+.asked-questions {
+    .title-questions {
+        margin: 8rem auto 0;
+        @include title-section()
+    }
+    .questions {
+        max-width: 600px;
+        margin: 4rem auto;
+        @include view-for(small-to-medium){
+            max-width: 360px;
+        }
+        hr {
+            border: .1px solid $Grayish-Blue;
+        }
+        .question-item {
+            button {
+                @include view-for(small-to-medium){
+                    font-size: 1rem;
+                }
+                width: 100%;
+                background-color: transparent;
+                color: $Very-Dark-Blue;
+                font-size: 1.1rem;
+                text-align: left;
+                position: relative;
+                padding: 3px 0px;
+                span {
+                    position: absolute;
+                    display: inline-block;
+                    width: 20px;
+                    @include view-for(small-to-medium){
+                        right: 5px;
+                    }
+                    right: 10px;
+                    z-index: -5;
+                    svg {
+                        transition: all .5s linear;
+                    }
+                }
+                .btn-span-active {
+                    svg {
+                        transform: rotate(180deg);
+                        path {
+                            stroke: $Soft-Red;
+                        }
+                    }
+                }
+                &:hover{
+                    color: $Soft-Red;
+                }
+            }
+            p {
+                margin: 20px 0;
+                @include view-for(small-to-medium){
+                    font-size: 15px;
+                };
+                font-size: 16px;
+                color: $Grayish-Blue;
+                line-height: 25px;
+                display: none;
+                transition: all 2s linear;
+                animation: animation-show-paragraph-2 .5 linear;
+            }
+            .answer-active {
+                display: block;
+                animation: animation-show-paragraph .5s linear;
+            }
+            @keyframes animation-show-paragraph {
+                0% {
+                    opacity: 0.1;
+                    line-height: 0px;
+                } 100% {
+                    opacity: 1;
+                    line-height: 25px;
+                }
+            }
+            @keyframes animation-show-paragraph-2 {
+                0% {
+                    opacity: 1;
+                    line-height: 25px;
+                } 100% {
+                    opacity: .1;
+                    line-height: 0px;
+                }
+            }            
+        }
+    }
+    .btn-more-info {
+        @include mix-button($Soft-Blue, #fff, $Soft-Blue, #fff, $Soft-Blue);
+        margin-left: 50%;
+        transform: translateX(-50%);
+    }    
+}

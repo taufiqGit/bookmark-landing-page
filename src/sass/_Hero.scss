@@ -1,0 +1,88 @@
+@import 'Mixin';
+@import 'colors';
+
+.bg-dot {
+    position: absolute;
+    width: 350px;
+    height: 300px;
+    z-index: -99;
+    right: 0;
+    top: 8vmax;
+    background-color: $Soft-Blue;
+    @include view-for(medium-plus-to-large){
+        height: 220px;
+        width: 280px;
+        top: 16vmin;
+    }
+    @include view-for(medium-to-medium-plus){
+        height: 50vmin;
+        width: 60vmin;
+        top: 25vmin;
+    }
+    @include view-for(small-to-medium){
+        top: 20vmin;
+        height: 45vmin;
+        width: 60vmin;
+    }
+    &::before {
+        content: "";
+        display: inline-block;
+        right: 100%;
+        position: absolute;
+        background-image: url('../images/bg-dots.svg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        transform: rotate(180deg);
+        width: 280px;
+        height: 100%;
+    }
+}
+.hero-section {
+    position: relative;
+    margin-top: 2rem;
+}        
+.hero {
+        height: auto;
+        @include flex-box(flex-start, flex-start);
+        @include view-for(small-to-medium-plus){
+            @include flex-box(center, flex-start, column-reverse);
+        }
+        .hero-desc {
+            padding-right: 20px;
+            @include flex-box(flex-start, flex-start, column);
+            @include view-for(small-to-medium-plus){
+                @include flex-box(flex-start, center, column);
+                text-align: center;
+                padding-right: 0;
+            }
+            h1 {
+                font-size: 2.8rem;
+                margin-top: 2.8rem;
+                @include view-for(medium-plus-to-large){
+                    font-size: 1.8rem;
+                    margin-top: 10vmin;
+                }
+            }
+            p {
+                margin: 25px 0 25px;
+                position: relative;
+                font-size: 1.1rem;
+                @include view-for(medium-plus-to-large){
+                    font-size: 15px;
+                }
+                color: $Grayish-Blue;
+            }
+            .hero-btn {
+                button:first-child {
+                    @include mix-button($Soft-Blue, #fff, $Soft-Blue, #fff, $Soft-Blue)
+                }
+                button:last-child {
+                    @include mix-button($Grayish-Blue, #fff, $Grayish-Blue, #fff, $Grayish-Blue);
+                    margin-left: 8px;
+                }
+            }
+        }
+        .hero-image {
+            width: 100%;
+        }
+}

@@ -1,0 +1,89 @@
+@import 'colors';
+@import 'Mixin';
+@import 'MediaQuery';
+
+.contact-us {
+    margin: 4rem auto 0;
+    text-align: center;
+    padding: 4rem 0;
+    @include flex-box(center, center, column);
+    background-color: $Soft-Blue;
+    p {
+        text-transform: uppercase;
+        font-size: 13px;
+        letter-spacing: 4px;
+        color: $White;
+    }
+    h3 {
+        margin-top: 3rem;
+        color: $White;
+        font-size: 2rem;
+        @include view-for(small-to-medium){
+            max-width: 350px;
+        }
+        max-width: 500px;
+    }
+    .email-submit {
+        margin-top: 3rem;
+        width: 500px;
+        position: relative;
+        @include flex-box();
+        @include view-for(small-to-medium){
+            width: 300px;
+            @include flex-box(center,center,column);   
+        }
+        input[type~="email"] {
+            @include view-for(small-to-medium){
+                width: 100%;
+                margin: 0 0 1rem;
+            }
+            position: relative;
+            z-index: 4;
+            border: 2px solid transparent;
+            height: 48px;
+            width: 70%;
+            padding: 0 10px;
+            margin-right: 1rem;
+            font-size: 1rem;
+            border-radius: 5px;
+        }
+        .icon-error {
+            position: absolute;
+            z-index: 5;
+            top: 15px;
+            left: 300px;
+            visibility: hidden;
+            @include view-for(small-to-medium){
+                left: 270px;
+            }
+        }
+        .error-email{
+            position: absolute;
+            background-color: $Soft-Red;
+            color: $White;
+            font-size: 14px;
+            border-radius: 5px;
+            left: -4px;
+            bottom: -22px;
+            padding: 2px 10px;
+            width: calc(70% - .2rem);
+            height: 75px;
+            display: none;
+            align-items: flex-end;
+            @include view-for(small-to-medium){
+                bottom: 43px;
+                width: calc(100% + 8px);
+            }
+        }
+        button {
+            @include view-for(small-to-medium){
+                position: relative;
+                top: 0px;
+                width: 100%;
+            }
+            height: 50px;
+            width: 30%;
+            @include mix-button($Soft-Red, #fff, $Soft-Red, #fff, $Soft-Red)
+        }
+    }
+}

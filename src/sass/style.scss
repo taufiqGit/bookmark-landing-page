@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap');
+@import 'Basis';
+@import 'Header';
+@import 'Hero';
+@import 'Feature';
+@import 'Download';
+@import 'Questions';
+@import 'ContactUs';
+@import 'Footer';
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Rubik', sans-serif;
+}
+
+

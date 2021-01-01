@@ -1,0 +1,53 @@
+$break-small: 375px;
+$break-medium: 768px;
+$break-medium-plus: 960px;
+$break-large: 1190px;
+$break-extra-large: 1680px;
+
+@mixin view-for($media) {
+    @if $media == small-to-medium {
+        @media screen and (min-width: $break-small) and (max-width: $break-medium) {
+            @content
+        }
+    } 
+    @else if $media == small-to-medium-plus {
+        @media screen and (min-width: $break-small) and (max-width: $break-medium-plus){
+            @content
+        }
+    }
+    @else if $media == medium-to-medium-plus {
+        @media screen and (min-width: $break-medium) and (max-width: $break-medium-plus) {
+            @content
+        }
+    }
+    @else if $media == medium-to-large {
+        @media screen and (min-width: $break-medium) and (max-width: $break-large) {
+            @content
+        }
+    }
+    @else if $media == medium-plus-to-large {
+        @media screen and (min-width: $break-medium-plus - 1) and (max-width: $break-large + 1) {
+            @content
+        }
+    }
+    @else if $media == small-to-extra-large {
+        @media screen and (min-width: $break-small){
+            @content
+        }
+    }
+    @else if $media == medium-to-extra-large {
+        @media screen and (min-width: $break-medium) {
+            @content
+        }
+    }
+    @else if $media == medium-plus-to-extra-large {
+        @media screen and (min-width: $break-medium-plus) {
+            @content
+        }
+    }
+    @else if $media == large-to-extra-large {
+        @media screen and (min-width: $break-large) {
+            @content
+        }
+    }
+}

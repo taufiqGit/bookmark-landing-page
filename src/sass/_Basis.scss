@@ -1,0 +1,27 @@
+.container {
+    width: 85%;
+    margin: 0 auto;
+    max-width: 1500;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+button {
+    height: 40px;
+    width: auto;
+    cursor: pointer;
+    padding: 3px 1rem;
+    border: none;
+    font-size: 16px;
+    border-radius: 4px;
+    letter-spacing: 1px;
+    outline: none;
+}
