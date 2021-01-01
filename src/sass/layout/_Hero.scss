@@ -1,5 +1,5 @@
-@import 'Mixin';
-@import 'colors';
+@import '../Mixin';
+@import '../colors';
 
 .bg-dot {
     position: absolute;
@@ -17,7 +17,7 @@
     @include view-for(medium-to-medium-plus){
         height: 50vmin;
         width: 60vmin;
-        top: 25vmin;
+        top: 15vmin;
     }
     @include view-for(small-to-medium){
         top: 20vmin;
@@ -53,14 +53,21 @@
             @include view-for(small-to-medium-plus){
                 @include flex-box(flex-start, center, column);
                 text-align: center;
+                margin-top: 1.5rem;
                 padding-right: 0;
             }
             h1 {
                 font-size: 2.8rem;
                 margin-top: 2.8rem;
-                @include view-for(medium-plus-to-large){
-                    font-size: 1.8rem;
-                    margin-top: 10vmin;
+                @include view-for(medium-to-large){
+                    font-size: 2rem;
+                }
+                @include view-for(medium-to-medium-plus){
+                    margin-top: 4rem;
+                }
+                @include view-for(small-to-medium){
+                    font-size: 2rem;
+                    margin-top: 3rem;
                 }
             }
             p {

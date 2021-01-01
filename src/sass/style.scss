@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap');
 @import 'Basis';
-@import 'Header';
-@import 'Hero';
-@import 'Feature';
-@import 'Download';
-@import 'Questions';
-@import 'ContactUs';
-@import 'Footer';
+@import './layout/Header';
+@import './layout/Hero';
+@import './layout/Feature';
+@import './layout/Download';
+@import './layout/Questions';
+@import './layout/ContactUs';
+@import './layout/Footer';
 
 * {
     box-sizing: border-box;

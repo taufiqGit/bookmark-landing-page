@@ -1,5 +1,5 @@
-@import 'colors';
-@import 'Mixin';
+@import '../colors';
+@import '../Mixin';
 
 .title-feature {
     margin-top: 5rem;
@@ -17,7 +17,7 @@
     @include view-for(medium-plus-to-large){
         height: 220px;
         width: 280px;
-        top: 16vmin;
+        top: 250px;
     }
     @include view-for(medium-to-medium-plus){
         height: 50vmin;
@@ -50,7 +50,6 @@
         @include view-for(small-to-medium){
             @include flex-box( null, null,column);
         }
-        
         button {
             position: relative;
             color: $Grayish-Blue;
@@ -96,10 +95,13 @@
             width: 70vw;
             padding-left: 2rem;
             @include view-for(small-to-medium-plus){ 
-                margin-top: 4rem;
+                margin-top: 2.5rem;
                 width: 100%;
                 text-align: center;
                 padding-left: 0;
+            }
+            @include view-for(medium-to-large){ 
+                margin-top: 3rem;
             }
             h2 {
                 font-size: 2rem;

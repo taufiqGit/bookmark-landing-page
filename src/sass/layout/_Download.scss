@@ -1,10 +1,13 @@
-@import 'colors';
-@import 'MediaQuery';
-@import 'Mixin';
+@import '../colors';
+@import '../MediaQuery';
+@import '../Mixin';
 
 
 .title-download {
-    margin: 10rem auto 0;
+    margin: 6rem auto 0;
+    @include view-for(medium-plus-to-extra-large){
+        margin: 10rem auto 0;
+    }
     @include title-section()
 }
 
@@ -29,7 +32,7 @@
         height: 310px;
         padding: 20px 0;
         border-radius: 5px;
-        box-shadow: 0px 5px 5px 0px $Grayish-Blue;
+        box-shadow: 0px 3px 6px 0px $Grayish-Blue;
         background-image: url('../images/bg-dots.svg');
         background-repeat: no-repeat;
         background-position-y: 75%;
