@@ -28,6 +28,8 @@
 @mixin mix-button($bg, $col, $hovBor, $hovBg, $hovCol, $bor: transparent) {
     background-color: $bg;
     color: $col;
+    font-size: 13px;
+    font-weight: 600;
     border: 2px solid $bor;
     transition: .4s ease-out;
     @include view-for(small-to-medium){

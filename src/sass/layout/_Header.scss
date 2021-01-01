@@ -29,6 +29,7 @@ header {
         }
         .btn-login {
             @include mix-button($Soft-Red, $White, $Soft-Red, $White, $Soft-Red);
+            font-size: 14px;
             @include view-for(small-to-medium){
                 @include mix-button(transparent, #fff, #fff, #fff, $Very-Dark-Blue, #fff);
                 font-size: 2rem;

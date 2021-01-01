@@ -59,6 +59,7 @@
             h1 {
                 font-size: 2.8rem;
                 margin-top: 2.8rem;
+                font-weight: 500;
                 @include view-for(medium-to-large){
                     font-size: 2rem;
                 }
@@ -84,7 +85,11 @@
                     @include mix-button($Soft-Blue, #fff, $Soft-Blue, #fff, $Soft-Blue)
                 }
                 button:last-child {
-                    @include mix-button($Grayish-Blue, #fff, $Grayish-Blue, #fff, $Grayish-Blue);
+                    @include mix-button(#fff, $Very-Dark-Blue, $Very-Dark-Blue, #fff, $Very-Dark-Blue);
+                    box-shadow: 0 1px 3px 0px $Grayish-Blue;
+                    &:hover {
+                        box-shadow: none;
+                    }
                     margin-left: 8px;
                 }
             }
