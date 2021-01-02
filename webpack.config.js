@@ -13,6 +13,7 @@ const Base = {
     plugins: [
         new HtmlWebpackPlugin({
             template: "./src/index.html",
+            favicon: "./src/images/favicon.ico",
             filename: "index.html"
         }),
         new MiniCssWebpackPlugin({
@@ -69,7 +70,16 @@ const Base = {
                         esModule: false
                     }
                 }
-            }
+            },
+            {
+                test: /\.(ico)$/,
+                use: [{
+                  loader: 'file-loader',
+                  options: {
+                    name: '[name].[ext]'
+                  }
+                }]
+            },
         ]
     }
 }

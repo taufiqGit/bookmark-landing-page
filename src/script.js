@@ -18,7 +18,6 @@ const BtnToggleMenu = document.getElementById('toggle-menu'),
       
 
 BtnToggleMenu.addEventListener('click', ()=>{
-   console.log(LogoSvg)
     if (BtnHamburgerMenu.classList.contains('active')) {
        BtnHamburgerMenu.classList.remove('active') 
        BtnHamburgerMenu.classList.add('no-active')
@@ -77,13 +76,11 @@ for (let BtnQuestion of BtnToggleQuestions){
 BtnSubmitEmail.addEventListener('click', ()=>{
    const Reg = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
    let isEmail = Reg.test(EmailValue.value)
-   console.log(isEmail)
    if (isEmail) {
       ErrorMsg.style.display = "none"
       BtnSubmitEmail.style.top = "0px"   
       IconError.style.visibility = "hidden"  
    } else {
-      console.log(BtnSubmitEmail)
       ErrorMsg.style.display = "flex"
       BtnSubmitEmail.style.top = "15px"   
       IconError.style.visibility = "visible" 
