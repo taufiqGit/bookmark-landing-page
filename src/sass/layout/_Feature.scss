@@ -48,7 +48,7 @@
     .btn-slide {
         @include flex-box();
         @include view-for(small-to-medium){
-            @include flex-box( null, null,column);
+            @include flex-box( center, center,column);
         }
         button {
             position: relative;
@@ -60,6 +60,9 @@
             border-radius: 0px;
             margin: 0;
             border-bottom: 3px solid transparent;
+            @include view-for(small-to-medium){
+                width: 210px;
+            }
             hr {
                 margin: 0;
                 position: absolute;
@@ -69,6 +72,10 @@
                 left: 0;
                 bottom: -3px;
                 z-index: -4;
+                @include view-for(small-to-medium){
+                    width: calc(100% + 100px);
+                    left: -50px;
+                }
             }
             &:hover {
                 color: $Soft-Red;
@@ -76,12 +83,14 @@
         }
         .btn-slide-active {
             border-bottom: 3px solid $Soft-Red;
+            color: $Very-Dark-Blue;
         }
     }
     .desc-features {
         margin-top: 40px;
         @include flex-box();
         @include view-for(small-to-medium-plus){ 
+            margin-top: 5rem;
             @include flex-box( null, null, column);
         }
         .img-features {
@@ -95,7 +104,7 @@
             width: 70vw;
             padding-left: 2rem;
             @include view-for(small-to-medium-plus){ 
-                margin-top: 2.5rem;
+                margin-top: 1.5rem;
                 width: 100%;
                 text-align: center;
                 padding-left: 0;

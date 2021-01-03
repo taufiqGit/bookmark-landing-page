@@ -58,6 +58,7 @@ const BtnSliders =(a, b, c)=>{
    BtnSlides[b].classList.remove('btn-slide-active')
    BtnSlides[c].classList.remove('btn-slide-active')
 }
+BtnSliders(0, 1, 2)
 
 for (let BtnQuestion of BtnToggleQuestions){
    BtnQuestion.addEventListener('click', (e)=>{
