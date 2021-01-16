@@ -7,39 +7,31 @@
 }
 .bg-dot-2 {
     position: absolute;
-    width: 350px;
+    left: 0;
+    transform: rotate(180deg);
+    width: 500px;
     height: 300px;
     z-index: -99;
-    left: 0;
     top: 20vmax;
-    transform: rotate(180deg);
     background-color: $Soft-Blue;
+    border-radius: 150px 0 0 150px;
     @include view-for(medium-plus-to-large){
-        height: 220px;
-        width: 280px;
-        top: 250px;
+        height: 250px;
+        width: 400px;
+        top: 25vmin;
+        border-radius: 110px 0 0 110px;
     }
     @include view-for(medium-to-medium-plus){
-        height: 50vmin;
-        width: 60vmin;
-        top: 220px;
+        height: 300px;
+        width: 600px;
+        top: 340px;
+        border-radius: 150px 0 0 150px;
     }
     @include view-for(small-to-medium){
-        top: 360px;
+        top: 370px;
         height: 45vmin;
-        width: 60vmin;
-    }
-    &::before {
-        content: "";
-        display: inline-block;
-        right: 100%;
-        position: absolute;
-        background-image: url('../images/bg-dots.svg');
-        background-repeat: no-repeat;
-        background-size: cover;
-        transform: rotate(180deg);
-        width: 280px;
-        height: 100%;
+        width: 70vmin;
+        border-radius: 22vmin 0 0 22vmin;
     }
 }
 .slide-features {
@@ -48,7 +40,7 @@
     .btn-slide {
         @include flex-box();
         @include view-for(small-to-medium){
-            @include flex-box( center, center,column);
+            @include flex-box( center, center, column);
         }
         button {
             position: relative;
@@ -87,7 +79,7 @@
         }
     }
     .desc-features {
-        margin-top: 40px;
+        margin-top: 4rem;
         @include flex-box();
         @include view-for(small-to-medium-plus){ 
             margin-top: 5rem;

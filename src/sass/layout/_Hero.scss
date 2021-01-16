@@ -3,38 +3,30 @@
 
 .bg-dot {
     position: absolute;
-    width: 350px;
+    width: 500px;
     height: 300px;
     z-index: -99;
     right: 0;
     top: 8vmax;
     background-color: $Soft-Blue;
+    border-radius: 150px 0 0 150px;
     @include view-for(medium-plus-to-large){
         height: 220px;
-        width: 280px;
-        top: 10vmin;
+        width: 400px;
+        top: 8vmin;
+        border-radius: 110px 0 0 110px;
     }
     @include view-for(medium-to-medium-plus){
         height: 50vmin;
         width: 60vmin;
         top: 15vmin;
+        border-radius: 25vmin 0 0 25vmin;
     }
     @include view-for(small-to-medium){
-        top: 20vmin;
+        top: 15vmin;
         height: 45vmin;
-        width: 60vmin;
-    }
-    &::before {
-        content: "";
-        display: inline-block;
-        right: 100%;
-        position: absolute;
-        background-image: url('../images/bg-dots.svg');
-        background-repeat: no-repeat;
-        background-size: cover;
-        transform: rotate(180deg);
-        width: 280px;
-        height: 100%;
+        width: 65vmin;
+        border-radius: 22vmin 0 0 22vmin;
     }
 }
 .hero-section {
@@ -86,7 +78,7 @@
                 }
                 button:last-child {
                     @include mix-button(#fff, $Very-Dark-Blue, $Very-Dark-Blue, #fff, $Very-Dark-Blue);
-                    box-shadow: 0 1px 3px 0px $Grayish-Blue;
+                    box-shadow: 0 1px 3px 0px rgba($color: $Grayish-Blue, $alpha: .4);
                     &:hover {
                         box-shadow: none;
                     }

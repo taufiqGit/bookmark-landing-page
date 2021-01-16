@@ -12,7 +12,7 @@
 }
 
 .download-browser {
-    $sizes-mr: 0px 50px 100px;
+    $sizes-mr: 0px 60px 120px;
     margin: 2rem auto 0;
     @include flex-box();
     @include view-for(small-to-medium-plus){
@@ -32,7 +32,7 @@
         height: 310px;
         padding: 20px 0;
         border-radius: 5px;
-        box-shadow: 0px 3px 6px 0px $Grayish-Blue;
+        box-shadow: 0px 3px 8px 0px rgba($color: $Grayish-Blue, $alpha: 0.4);
         background-image: url('../images/bg-dots.svg');
         background-repeat: no-repeat;
         background-position-y: 75%;
@@ -51,7 +51,7 @@
             font-size: 14px;
         }
         button {
-            font-size: 13px;
+            font-size: 12px !important;
             width: 210px;
             @include mix-button($Soft-Blue, #fff, $Soft-Blue, #fff, $Soft-Blue)
         }

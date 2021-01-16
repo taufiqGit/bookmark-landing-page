@@ -33,6 +33,7 @@
     font-weight: 600;
     border: 2px solid $bor;
     transition: .4s ease-out;
+    font-size: 14px;
     @include view-for(small-to-medium){
         font-size: 12px;
     }
@@ -76,5 +77,17 @@
         margin-top: 16px;
         color: $Grayish-Blue;
         font-size: 1.1rem;
+    }
+}
+
+@mixin list-hamburger-menu {
+    li {
+        margin: 16px 0;
+        text-align: center;
+        a{
+            color: #fff;
+            font-size: 1.5rem;
+            letter-spacing: 2px;
+        }
     }
 }
